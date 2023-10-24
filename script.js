@@ -51,3 +51,4 @@ function drawMenu(data) {
 	});
 	navBar.appendChild(ul);
 }
+

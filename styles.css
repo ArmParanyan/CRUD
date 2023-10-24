@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 header {
     display: flex;
     align-items: center;
@@ -6,12 +13,9 @@ header {
     width: 100%;
     margin: 0 auto;
     padding: 0 32px;
+    height: 60px;
 }
 
-
-.body-wrapper {
-    display: flex;
-}
 
 .header-wrapper {
     display: flex;
@@ -27,8 +31,8 @@ header {
     padding: 0 32px;
 }
 
-.hope-ui  p {
-    color:  #232D42;
+.hope-ui p {
+    color: #232D42;
     font-family: Inter;
     font-size: 33px;
     font-style: normal;
@@ -46,8 +50,8 @@ header {
     border-radius: 33px;
     background: #3A57E8;
     position: absolute;
-    top: 40px;
-    left: 251px;
+    top: 15px;
+    left: 220px;
 }
 
 .search {
@@ -95,17 +99,132 @@ header {
     font-weight: 400;
 }
 
+.body-wrapper {
+    display: flex;
+}
+
 .nav-bar-wrapper {
     display: flex;
-    max-width: 257px;
+    width: 257px;
 }
 
 #nav-bar {
-    max-width: 257px;
     width: 100%;
     background: yellow;
 }
 
 ul {
     list-style: none;
+}
+
+.main-part-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.hello-devs {
+    /*display: flex;*/
+    width: 100%;
+    background: blue;
+    height: 276px;
+    /*justify-content: space-between;*/
+    padding-right: 127px;
+    padding-left: 39px;
+    border-radius: 0 0 16px 16px;
+    background: radial-gradient(36.28% 150.93% at 50% 50%, #3B8AFF 0%, #0048B2 100%);
+}
+
+.hello-devs-content {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 17px;
+    align-items: flex-start;
+}
+
+.hello-devs-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.announcments {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 4px;
+    background: rgba(58, 87, 232, 0.35);
+    padding: 8px 24px;
+    height: 24px;
+}
+
+/*.hello-devs-content {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+.hello-devs-p {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.we-are-on-misson {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.announcments p {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.posts-wrapper {
+    position: absolute;
+    background: red;
+    max-width: 1587px;
+    height: 100%;
+    width: 100%;
+    top: 310px;
+    left: 267px;
+    padding: 24px;
+
+}
+
+.posts-and-button-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.posts p {
+    color: #232D42;
+    font-family: Inter;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.create-buttons {
+    padding: 8px 24px;
+    border-radius: 4px;
+    background: #3A57E8;
+    box-shadow: 0px 2px 4px 0px rgba(58, 87, 232, 0.30);
+
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
 }

@@ -5,19 +5,19 @@
       {
         "title": "Dashboard",
         "path": "dashboard",
-        "icon": "",
+        "icon": "./images/Category.svg",
         "children": []
       },
 
       {
         "title": "Menu Style",
         "path": "style-menu",
-        "icon": "",
+        "icon": "./images/Filter.svg",
         "children": [
           {
             "title": " Sub Menu Style",
             "path": "sub-style-menu",
-            "icon": "",
+            "icon": "./images/Ellipse176.png",
             "children": []
           }
         ]
@@ -31,12 +31,12 @@
       {
         "title": "Example",
         "path": "example",
-        "icon": "",
+        "icon": "./images/Game.svg",
         "children": [
           {
             "title": "Sub Example",
             "path": "sub-example",
-            "icone": "",
+            "icone": "./images/Ellipse176.png",
             "children": []
           }
         ]
@@ -45,12 +45,12 @@
       {
         "title": "Widgets",
         "path": "widgets",
-        "icon": "",
+        "icon": "./images/TicketStar.svg",
         "children": [
           {
             "title": "Sub Widgets",
             "path": "sub-widgets",
-            "icon": "",
+            "icon": "./images/Ellipse176.png",
             "children": []
           }
         ]
@@ -59,12 +59,12 @@
       {
         "title": "Categories",
         "path": "categories",
-        "icon": "",
+        "icon": "./images/Bookmark.svg",
         "children": [
           {
             "title": "Posts",
             "path": "posts",
-            "icon": "",
+            "icon": "./images/Ellipse176.png",
             "children": []
           }
         ]
@@ -73,12 +73,12 @@
       {
         "title": "Authentication",
         "path": "authentication",
-        "icon": "",
+        "icon": "./images/ShieldDone.svg",
         "children": [
           {
             "title": "Sub Authentication",
             "path": "sub-authentication",
-            "icon": "",
+            "icon": "./images/Ellipse176.png",
             "children": []
           }
         ]
@@ -87,12 +87,12 @@
       {
         "title": "Users",
         "path": "users",
-        "icon": "",
+        "icon": "./images/3User.svg",
         "children": [
           {
             "title": "Sub Users",
             "path": "sub-users",
-            "icon": "",
+            "icon": "./images/Ellipse176.png",
             "children": []
           }
         ]
@@ -101,21 +101,21 @@
       {
         "title": "Error 404",
         "path": "error404",
-        "icon": "",
+        "icon": "./images/InfoCircle.svg",
         "children": []
       },
 
       {
         "title": "Error 505",
         "path": "error505",
-        "icon": "",
+        "icon": "./images/Danger.svg",
         "children": []
       },
 
       {
         "title": "Maintence",
         "path": "maintence",
-        "icon": "",
+        "icon": "./images/Location.svg",
         "children": []
       }
     ]
@@ -127,12 +127,12 @@
       {
         "title": "Components",
         "path": "components",
-        "icon": "",
+        "icon": "./images/Wallet.svg",
         "children": [
           {
             "title": "Sub Components",
             "path": "sub-components",
-            "icon": "",
+            "icon": "./images/Ellipse176.png",
             "children": []
           }
         ]
@@ -141,12 +141,12 @@
       {
         "title": "Form",
         "path": "form",
-        "icon": "",
+        "icon": "./images/Documnet.svg",
         "children": [
           {
             "title": "Sub Form",
             "path": "sub-form",
-            "icon": "",
+            "icon": "./images/Ellipse176.png",
             "children": []
           }
         ]
@@ -155,12 +155,12 @@
       {
         "title": "Table",
         "path": "table",
-        "icon": "",
+        "icon": "./images/Setting.svg",
         "children": [
           {
             "title": "Sub Table",
             "path": "sub-table",
-            "icon": "",
+            "icon": "./images/Ellipse176.png",
             "children": []
           }
         ]
@@ -169,12 +169,12 @@
       {
         "title": "Icons",
         "path": "icons",
-        "icon": "",
+        "icon": "./images/Frame35287.svg",
         "children": [
           {
             "title": "Sub Icons",
             "path": "sub-icons",
-            "icon": "",
+            "icon": "./images/Ellipse176.png",
             "children": []
           }
         ]
