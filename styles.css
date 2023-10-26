@@ -105,12 +105,11 @@ header {
 
 .nav-bar-wrapper {
     display: flex;
-    width: 257px;
 }
 
 #nav-bar {
     width: 100%;
-    background: yellow;
+    /*background: yellow;*/
 }
 
 ul {
@@ -121,6 +120,7 @@ ul {
     display: flex;
     flex-direction: column;
     width: 100%;
+    background: #E9ECEF;
 }
 
 .hello-devs {
@@ -190,25 +190,64 @@ ul {
     font-weight: 400;
 }
 
-.posts-wrapper {
-    position: absolute;
-    background: red;
-    max-width: 1587px;
-    height: 100%;
-    width: 100%;
-    top: 310px;
-    left: 267px;
-    padding: 24px;
 
+
+#nav-bar {
+    background-color: white;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /*padding-left: 23px;*/
+
+    padding: 5px 15px 5px 23px;
+}
+
+ul li {
+    padding-left: 10px;
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+
+}
+
+/*ul li img:last-child {*/
+/*    color: #8A92A6*/
+/*}*/
+
+ul li a {
+    text-decoration: none;
+
+    color: #8A92A6;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.posts-wrapper {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 10px 13px 0px rgba(17, 38, 146, 0.05);
+    margin-top: -45px;
+
+    flex-direction: column;
 }
 
 .posts-and-button-wrapper {
     display: flex;
-    width: 100%;
     justify-content: space-between;
+    padding: 24px;
 }
 
-.posts p {
+.posts-text p {
     color: #232D42;
     font-family: Inter;
     font-size: 23px;
@@ -227,4 +266,37 @@ ul {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
+}
+
+
+.posts {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr 1fr;
+    padding: 24px;
+    background: #F5F6FA;
+}
+
+.about-users-text {
+    color: #8A92A6;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.pad {
+    padding: 12px 24px;
+
+}
+
+.user-datas {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr 1fr;
+    background: #FFF;
+}
+
+.posts-main-part {
+    max-height: 305px;
+    overflow: auto;
+    padding: 24px;
 }
