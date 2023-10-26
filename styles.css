@@ -253,9 +253,14 @@ ul li a {
     font-size: 23px;
     font-style: normal;
     font-weight: 500;
+    padding: 24px;
 }
 
-.create-buttons {
+.create-buttons-wrapper {
+    padding: 24px;
+}
+
+.create-button {
     padding: 8px 24px;
     border-radius: 4px;
     background: #3A57E8;
@@ -268,6 +273,12 @@ ul li a {
     font-weight: 400;
 }
 
+
+.main-posts {
+    display: flex;
+    height: 500px;
+
+}
 
 .posts {
     display: grid;
@@ -296,7 +307,115 @@ ul li a {
 }
 
 .posts-main-part {
-    max-height: 305px;
+    max-height: 500px;
     overflow: auto;
     padding: 24px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+}
+
+.edit-posts-wrapper {
+    display: flex;
+
+}
+
+
+
+/*.wrapper {*/
+/*    width: 488px;*/
+/*    height: 268px;*/
+/*    margin: 0 auto;*/
+
+/*    background-color: #EEE;*/
+/*}*/
+
+
+.posts-create-main-part {
+    display: flex;
+    gap: 24px;
+    padding: 24px;
+}
+
+.title-and-select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 710px;
+    width: 40%;
+}
+
+.elems {
+    border-radius: 4px;
+    border: 1px solid #EEE;
+    padding: 8px 16px;
+    width: 100%;
+}
+
+.create-posts-body-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+
+
+.create-body {
+    padding: 8px 16px 50px 16px;
+
+}
+
+.create-post {
+
+    display: flex;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+
+
+    border-radius: 4px;
+    background: #1AA053;
+    box-shadow: 0px 2px 4px 0px rgba(26, 160, 83, 0.30);
+
+    color: #FFF;
+
+    /* H6 16px Regular Inter */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 175%;
+    /* 28px */
+}
+
+
+.cancel {
+
+    display: flex;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+
+
+    border-radius: 4px;
+    background: #DEE2E6;
+    box-shadow: 0px 2px 4px 0px rgba(222, 226, 230, 0.30);
+
+    /* H6 16px Regular Inter */
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 175%; /* 28px */
+}
+
+
+.create-delete-buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 220px 20px;
+    gap: 20px;
 }

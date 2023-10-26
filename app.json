@@ -141,7 +141,7 @@
       {
         "title": "Form",
         "path": "form",
-        "icon": "./images/Documnet.svg",
+        "icon": "./images/Document.svg",
         "children": [
           {
             "title": "Sub Form",

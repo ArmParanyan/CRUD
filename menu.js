@@ -1,15 +1,8 @@
 const navBar = document.getElementById("nav-bar");
 
-fetch("app.json")
-	.then(response => response.json())
-	.then(data => {
-		drawMenu(data);
-	})
-	.catch(error => {
-		console.error("Error fetching JSON", error);
-	});
 
-function drawMenu(data) {
+
+export function drawMenu(data) {
 	const ul = document.createElement("ul");
 
 	data.forEach(item => {
@@ -19,7 +12,7 @@ function drawMenu(data) {
 		// a.classList.add("decoration")
 
 
-		li.appendChild(a);
+		// li.appendChild(a);
 		ul.appendChild(li);
 
 		// const arrayProperties = Object.keys(item).filter(prop => Array.isArray(item[prop]));
