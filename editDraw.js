@@ -31,7 +31,7 @@ function drawEditHtml() {
 
         <div class="create-delete-buttons-wrapper edit-part">
             <div class="create-post-buttons edit-part">
-                <button class="create-post">Create</button>
+                <button class="create-post">Save</button>
             </div>
 
             <div class="delete-post-buttons edit-part">
@@ -61,11 +61,10 @@ export function drawEditPosts(usersData) {
 		const createButton = document.querySelector(".create-post");
 
 
+		const userIds = usersData.map(({id}) => id);
 
-		const userIds = usersData.map(({ id }) => id);
 
-
-		usersData.forEach((user, index)=> {
+		usersData.forEach((user, index) => {
 			const option = document.createElement("option");
 			option.value = userIds[index];
 			option.innerHTML = user.name;
@@ -83,10 +82,8 @@ export function drawEditPosts(usersData) {
 
 				const selectedUser = usersData.find(user => user.name === selectUser.value);
 
-
-				// Proceed with the fetch request
-				fetch('https://jsonplaceholder.typicode.com/posts', {
-					method: 'POST',
+				fetch(`https://jsonplaceholder.typicode.com/posts/${selectedUserId}`, {
+					method: 'PUT',
 					body: JSON.stringify({
 						title: inputTitle.value,
 						body: createBody.value,
@@ -96,16 +93,43 @@ export function drawEditPosts(usersData) {
 						'Content-type': 'application/json; charset=UTF-8',
 					},
 				})
-					.then((response) => response.json())
+					.then((response) => {
+						if (response.ok) {
+							console.log("Post updated successfully!", response.status);
+							return response.json();
+						} else {
+							console.error("Failed to update post. HTTP status code: " + response.status);
+							throw new Error("Failed to update post");
+						}
+					})
 					.then((json) => console.log(json));
 
-				// window.location.reload(); // lacotutyun senc chtoxel
 			} else {
 				console.error("please fill all the fields !!!");
 			}
+
+
+			// window.location.href = "http://127.0.0.1:5500/#/edit/1";
+
+
 		});
+
+
+		const editable = document.querySelectorAll(".editable");
+
+		editable.forEach(item => {
+
+		console.log(item);
+		})
+
+		// let userIdForUrl = editable.getAttribute("data-user-id");
+		// console.log(userIdForUrl);
+
+		history.pushState(null, "", `/#/posts/edit`);
 
 
 	}
 
 }
+
+

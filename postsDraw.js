@@ -1,3 +1,4 @@
+
 function drawPosts() {
 	let html = `  <div class="posts-and-button-wrapper">
                 <div class="posts-text">
@@ -34,28 +35,32 @@ function drawPosts() {
 	const postWrapper = document.querySelector(".posts-wrapper");
 
 	postWrapper.innerHTML = html;
+
+	history.pushState(null, "", "/#/posts");
+
 }
 
 drawPosts();
 
 
-export function drawUserPosts(postsData, usersData) {
-	const userIds = usersData.map(user => user.id);
-	const postIds = postsData.map(posts => posts.userId);
-
-	const commonIds = userIds.filter(userId => postIds.includes(userId));
+export  function drawUserPosts(postsData, usersData) {
+	const usersMap = new Map(usersData.map(user => [user.id, user.name]));
 
 	const postsWrapper = document.querySelector(".posts-wrapper");
+	const postsMainPart = document.querySelector(".posts-main-part");
 
-	postIds.forEach((commonId, index) => {
-		const post = postsData.find(post => post.userId === commonId);
-		const user = usersData.find(user => user.id === commonId);
-
-		if (post && user) {
+	postsData.forEach((post, index) => {
+		if (usersMap.has(post.userId)) {
 			const userDatas = document.createElement("div");
 
+			userDatas.classList.add('user-datas', 'pad');
 
-			const postsMainPart = document.querySelector(".posts-main-part")
+
+			const userId = document.createElement("div");
+			userId.classList.add("user-id", 'pad');
+			userId.textContent = index + 1;
+
+
 
 			userDatas.classList.add('user-datas', 'pad');
 
@@ -66,21 +71,22 @@ export function drawUserPosts(postsData, usersData) {
 
 			}
 
-
-			const userId = document.createElement("div");
-			userId.classList.add("user-id", 'pad');
-
-			userId.textContent = index + 1;
-
-
-			const userName = document.createElement('div');
-
+			const userName = document.createElement("div");
 			userName.classList.add('user-name', 'pad', "editable");
-			userName.textContent = user.username;
+			userName.textContent = usersMap.get(post.userId);
+
+			userName.setAttribute('data-user-id', `${index + 1}`);
+
+
+
 
 			const title = document.createElement('div');
 			title.classList.add('title', 'pad', "editable");
 			title.textContent = post.title;
+
+			title.setAttribute('data-user-id', `${index + 1}`);
+
+
 
 			const changes = document.createElement('div');
 			changes.classList.add('actions');
@@ -89,17 +95,18 @@ export function drawUserPosts(postsData, usersData) {
 			const deleteIcone = document.createElement("img");
 
 			editIcone.classList.add("edit-icon", "editable");
-			deleteIcone.classList.add("delete-icon");
+			editIcone.setAttribute('data-user-id', `${index + 1}`);
 
-			// editIcone.id = "edit-icon"
+
+			deleteIcone.classList.add("delete-icon");
+			deleteIcone.alt = userId.textContent;
+
 
 			editIcone.src = "./images/Edit_fill.png";
 			deleteIcone.src = "./images/del_alt_duotone_line.png";
 
-
 			changes.appendChild(editIcone);
 			changes.appendChild(deleteIcone);
-
 
 			userDatas.appendChild(userId);
 			userDatas.appendChild(userName);
@@ -107,8 +114,11 @@ export function drawUserPosts(postsData, usersData) {
 			userDatas.appendChild(changes);
 			postsMainPart.appendChild(userDatas);
 			postsWrapper.appendChild(postsMainPart);
-
 		}
 	});
+
+	// window.location.href = "http://127.0.0.1:5500/#/posts";
+
+
 }
 

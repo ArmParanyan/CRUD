@@ -1,4 +1,4 @@
-function drawCreateHtml() {
+export function drawCreateHtml() {
 	let html = `  
 
         <div class="posts-text">
@@ -44,12 +44,14 @@ function drawCreateHtml() {
 	const postWrapper = document.querySelector(".posts-wrapper");
 
 	postWrapper.innerHTML = html;
+	history.pushState(null, "", "/#/posts/create");
 
 }
 
 
-export function drawCreatePosts(usersData) {
+export  function drawCreatePosts(usersData) {
 	return function () {
+
 		drawCreateHtml();
 
 		const mainPosts = document.querySelector(".main-posts");
@@ -59,12 +61,13 @@ export function drawCreatePosts(usersData) {
 		const selectUser = document.querySelector("select");
 		const createButton = document.querySelector(".create-post");
 
+		// const button = document.querySelector(".create-button");
+		// button.href = "/#create"
+
+		const userIds = usersData.map(({id}) => id);
 
 
-		const userIds = usersData.map(({ id }) => id);
-
-
-		usersData.forEach((user, index)=> {
+		usersData.forEach((user, index) => {
 			const option = document.createElement("option");
 			option.value = userIds[index];
 			option.innerHTML = user.name;
@@ -95,13 +98,33 @@ export function drawCreatePosts(usersData) {
 						'Content-type': 'application/json; charset=UTF-8',
 					},
 				})
-					.then((response) => response.json())
+					.then((response) => {
+						if (response.ok) {
+							// Check if the response status is OK (status code 200)
+							console.log("Post created successfully!", response.status);
+							return response.json(); // Parse the response data
+						} else {
+							console.error("Failed to create post. HTTP status code: " + response.status);
+							throw new Error("Failed to create post");
+						}
+					})
 					.then((json) => console.log(json));
 
-				window.location.reload(); // lacotutyun senc chtoxel
 			} else {
 				console.error("please fill all the fields !!!");
 			}
 		});
+
+	// window.location.href = "http://127.0.0.1:5500/#/create";
+
+
+
+
+
 	}
+
+
+
+
+
 }
