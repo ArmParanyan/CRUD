@@ -8,23 +8,21 @@
         "icon": "./images/Category.svg",
         "children": []
       },
-
       {
         "title": "Menu Style",
         "path": "style-menu",
         "icon": "./images/Filter.svg",
         "children": [
           {
-            "title": " Sub Menu Style",
+            "title": "Sub Menu Style",
             "path": "sub-style-menu",
-            "icon": "./images/Ellipse176.png",
+            "icon": "./images/Ellipse 145.svg",
             "children": []
           }
         ]
       }
     ]
   },
-
   {
     "group": "Pages",
     "pages": [
@@ -36,12 +34,11 @@
           {
             "title": "Sub Example",
             "path": "sub-example",
-            "icone": "./images/Ellipse176.png",
+            "icon": "./images/Ellipse 145.svg",
             "children": []
           }
         ]
       },
-
       {
         "title": "Widgets",
         "path": "widgets",
@@ -50,12 +47,11 @@
           {
             "title": "Sub Widgets",
             "path": "sub-widgets",
-            "icon": "./images/Ellipse176.png",
+            "icon": "./images/Ellipse 145.svg",
             "children": []
           }
         ]
       },
-
       {
         "title": "Categories",
         "path": "categories",
@@ -64,12 +60,11 @@
           {
             "title": "Posts",
             "path": "posts",
-            "icon": "./images/Ellipse176.png",
+            "icon": "./images/Ellipse 145.svg",
             "children": []
           }
         ]
       },
-
       {
         "title": "Authentication",
         "path": "authentication",
@@ -78,12 +73,11 @@
           {
             "title": "Sub Authentication",
             "path": "sub-authentication",
-            "icon": "./images/Ellipse176.png",
+            "icon": "./images/Ellipse 145.svg",
             "children": []
           }
         ]
       },
-
       {
         "title": "Users",
         "path": "users",
@@ -92,35 +86,31 @@
           {
             "title": "Sub Users",
             "path": "sub-users",
-            "icon": "./images/Ellipse176.png",
+            "icon": "./images/Ellipse 145.svg",
             "children": []
           }
         ]
       },
-
       {
         "title": "Error 404",
         "path": "error404",
         "icon": "./images/InfoCircle.svg",
         "children": []
       },
-
       {
         "title": "Error 505",
         "path": "error505",
         "icon": "./images/Danger.svg",
         "children": []
       },
-
       {
-        "title": "Maintence",
-        "path": "maintence",
+        "title": "Maintenance",
+        "path": "maintenance",
         "icon": "./images/Location.svg",
         "children": []
       }
     ]
   },
-
   {
     "group": "Elements",
     "pages": [
@@ -132,12 +122,11 @@
           {
             "title": "Sub Components",
             "path": "sub-components",
-            "icon": "./images/Ellipse176.png",
+            "icon": "./images/Ellipse 145.svg",
             "children": []
           }
         ]
       },
-
       {
         "title": "Form",
         "path": "form",
@@ -146,12 +135,11 @@
           {
             "title": "Sub Form",
             "path": "sub-form",
-            "icon": "./images/Ellipse176.png",
+            "icon": "./images/Ellipse 145.svg",
             "children": []
           }
         ]
       },
-
       {
         "title": "Table",
         "path": "table",
@@ -160,12 +148,11 @@
           {
             "title": "Sub Table",
             "path": "sub-table",
-            "icon": "./images/Ellipse176.png",
+            "icon": "./images/Ellipse 145.svg",
             "children": []
           }
         ]
       },
-
       {
         "title": "Icons",
         "path": "icons",
@@ -174,7 +161,7 @@
           {
             "title": "Sub Icons",
             "path": "sub-icons",
-            "icon": "./images/Ellipse176.png",
+            "icon": "./images/Ellipse 145.svg",
             "children": []
           }
         ]

@@ -1,3 +1,4 @@
+
 function drawEditHtml() {
 	let html = `
 
@@ -48,9 +49,11 @@ function drawEditHtml() {
 }
 
 
-export function drawEditPosts(usersData) {
+export function drawEditPosts(usersData, id) {
 
 	return function () {
+		history.pushState(null, "", `/#/posts/edit/${id}`);
+
 		drawEditHtml();
 
 		const mainPosts = document.querySelector(".main-posts");
@@ -59,7 +62,7 @@ export function drawEditPosts(usersData) {
 
 		const selectUser = document.querySelector("select");
 		const createButton = document.querySelector(".create-post");
-
+		const cancelButton = document.querySelector(".cancel");
 
 		const userIds = usersData.map(({id}) => id);
 
@@ -109,24 +112,10 @@ export function drawEditPosts(usersData) {
 			}
 
 
-			// window.location.href = "http://127.0.0.1:5500/#/edit/1";
-
-
 		});
 
 
-		const editable = document.querySelectorAll(".editable");
-
-		editable.forEach(item => {
-
-		console.log(item);
-		})
-
-		// let userIdForUrl = editable.getAttribute("data-user-id");
-		// console.log(userIdForUrl);
-
-		history.pushState(null, "", `/#/posts/edit`);
-
+		return window.location.hash;
 
 	}
 

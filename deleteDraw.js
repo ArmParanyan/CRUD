@@ -22,13 +22,13 @@ export  function drawPopup() {
 	postWrapper.appendChild(tempContainer);
 
 
-	const popupContainer = document.querySelector(".popup-container");
-
-
-
-
 }
 
+
+export function hidePopup() {
+	const popupContainer = document.querySelector(".popup-container");
+	popupContainer.style.display = "none";
+}
 
 export function deleteUserPopup(item,deleteID) {
 

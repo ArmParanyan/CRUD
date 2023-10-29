@@ -13,5 +13,4 @@ export class Requests {
 		}
 	};
 
-	static async POST() {}
 }

@@ -1,80 +1,120 @@
 const navBar = document.getElementById("nav-bar");
 
 
+export function drawMenu(data, container) {
 
-export  function drawMenu(data) {
 	const ul = document.createElement("ul");
+	let liTitle = document.createElement("h1");
 
-	data.forEach(item => {
+
+	if (data.group !== undefined) {
+
+		liTitle.innerText = data.group;
+		ul.appendChild(liTitle);
+
+	}
+
+	let i = 0;
+
+	for (const key in data) {
 		const li = document.createElement("li");
-		const a = document.createElement("a");
-		li.innerHTML = item.group;
-		// a.classList.add("decoration")
 
 
-		// li.appendChild(a);
-		ul.appendChild(li);
+		if (typeof data[key] === "object") {
 
-		// const arrayProperties = Object.keys(item).filter(prop => Array.isArray(item[prop]));
+			li.appendChild(drawMenu(data[key], container));
+			ul.appendChild(li);
 
-		// console.log(arrayProperties);
+		} else if (data.title !== undefined) {
 
-		// console.log(CHILDREN);
-
-		item.pages.forEach(elem => {
-			const pagesLi = document.createElement("li");
-			const pagesA = document.createElement("a");
-			const pagesUl = document.createElement("ul");
-			const icon = document.createElement("img");
-			const arrowIcon = document.createElement("img");
-
-			pagesA.classList.add("decoration");
-
-			pagesA.innerHTML = elem.title;
-			// console.log(elem.title);
-			pagesA.href = elem.path;
-			icon.src = elem.icon;
-
-			pagesLi.appendChild(icon);
-			pagesLi.appendChild(pagesA);
+			if (i === 0) {
 
 
-			pagesUl.appendChild(pagesLi);
+				let img = document.createElement("img");
+				img.src = data.icon;
+
+				if (img.src === "./images/Ellipse 145.svg") {
+
+					img.classList.add("hidable", "border");
+				}
 
 
-			if (elem.children && elem.children.length > 0) {
-				arrowIcon.src = "./images/ic_Chevron.svg";
-				arrowIcon.style.transform = "rotate(90deg)";
+				li.appendChild(img);
 
-				pagesLi.appendChild(arrowIcon);
 
-				// drawMenu(elem.children);
+				let p = document.createElement("p");
+				p.textContent += `${data.title}`
+				p.classList.add("hidable");
 
-				// console.log(elem.children)
+				if (p.textContent === "Categories" || p.textContent === "Posts") {
 
-				// elem.children.forEach(child => {
-				// 	console.log("       ",child.title);
-				// });
+					li.classList.add("add-background-color");
+				}
+
+				li.appendChild(p);
+
+				if (data.children.length > 0) {
+
+					const arrowIcon = document.createElement("img");
+					arrowIcon.src = "./images/ic_Chevron.svg";
+					arrowIcon.style.transform = "rotate(90deg)";
+					arrowIcon.classList.add("hidable");
+
+					li.appendChild(arrowIcon);
+				}
+
+				// li.classList.add("hidable");
+				i++;
+
+
+				ul.appendChild(li);
+
 
 			}
 
+		}
 
-			ul.appendChild(pagesUl);
+	}
 
-
-		});
-
-
-		// drawMenu(item, navBar);
-
-
-	});
-
-	navBar.appendChild(ul);
+	return ul;
 
 
 }
 
 
+export async function hideMenuToggle() {
+	const menuHidingIcon = document.querySelector(".arrow");
 
+	const menu = document.querySelectorAll(".hidable");
+
+
+	let isMenuHidden = false;
+
+
+	const backCol = document.querySelector(".add-background-color");
+
+
+	menuHidingIcon.addEventListener("click", () => {
+		if (isMenuHidden) {
+			menu.forEach(item => {
+				item.style.display = "flex";
+			});
+
+			menuHidingIcon.style.transform = "rotate(0deg)";
+			isMenuHidden = !isMenuHidden;
+
+		} else {
+			menu.forEach(item => {
+
+
+				item.style.display = "none";
+			});
+
+			menuHidingIcon.style.transform = "rotate(180deg)";
+			isMenuHidden = !isMenuHidden;
+
+		}
+
+	});
+}
 

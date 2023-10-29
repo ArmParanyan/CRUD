@@ -193,6 +193,7 @@ ul {
 
 
 #nav-bar {
+    display: contents;
     background-color: white;
 }
 
@@ -200,9 +201,9 @@ ul {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    /*padding-left: 23px;*/
 
-    padding: 5px 15px 5px 23px;
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 ul li {
@@ -211,15 +212,14 @@ ul li {
     display: flex;
     gap: 16px;
     align-items: center;
-
+    white-space: nowrap;
 
 }
 
-/*ul li img:last-child {*/
-/*    color: #8A92A6*/
-/*}*/
-
-ul li a {
+.border {
+    border: 2px  black solid;
+}
+h1, ul li p {
     text-decoration: none;
 
     color: #8A92A6;
@@ -227,6 +227,16 @@ ul li a {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
+}
+
+
+.add-background-color {
+    border-radius: 4px;
+    background: #3A57E8;
+    box-shadow: 2px 2px 12px 0px rgba(17, 38, 146, 0.20);
+
+    padding: 8px 24px;
+
 }
 
 .posts-wrapper {
@@ -500,3 +510,39 @@ ul li a {
 }
 
 
+.main-div-footer {
+    display: flex;
+    padding: 16px 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-div-footer-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.main-div-footer-right {
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.footer-author {
+    color: #3A57E8;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

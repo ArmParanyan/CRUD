@@ -1,15 +1,24 @@
 import {drawUserPosts} from "./postsDraw.js";
-import {drawMenu} from "./menu.js";
+import {drawMenu, hideMenuToggle} from "./menu.js";
 import {Requests} from "./requests.js";
 import {drawCreatePosts} from "./createDraw.js";
 import {drawEditPosts} from "./editDraw.js";
-import {deleteUserPopup, drawPopup} from "./deleteDraw.js";
+import {deleteUserPopup, drawPopup, hidePopup} from "./deleteDraw.js";
+import {routingHandler} from "./router.js";
+
 
 const navBar = document.getElementById("nav-bar");
 
 
 Requests.GET("app.json")
-	.then((data) => drawMenu(data));
+	.then((data) => {
+		navBar.appendChild(drawMenu(data, navBar))
+		hideMenuToggle()
+	}
+);
+
+
+let path = "#/posts";
 
 
 const postsRequest = Requests.GET("https://jsonplaceholder.typicode.com/posts");
@@ -23,12 +32,19 @@ Promise.all([postsRequest, usersRequest])
 
 	.then(([postsData, usersData]) => {
 		drawUserPosts(postsData, usersData);
+		routingHandler(path);
 		return [postsData, usersData];
 	})
 	.then(([postsData, usersData]) => {
 		const button = document.querySelector(".create-button");
 
-		button.addEventListener("click", drawCreatePosts(usersData));
+		button.addEventListener("click", () => {
+			path = drawCreatePosts(usersData)();
+
+			routingHandler(path);
+		} );
+
+
 
 		return usersData;
 
@@ -36,9 +52,14 @@ Promise.all([postsRequest, usersRequest])
 	.then((usersData) => {
 		const edit = document.querySelectorAll(".editable");
 		edit.forEach(elem => {
-			elem.addEventListener("click", drawEditPosts(usersData));
+			elem.addEventListener("click", () => {
 
-			// console.log(window.location.hash);
+				let id = elem.getAttribute("data-user-id");
+
+				path = drawEditPosts(usersData, id)();
+				routingHandler(path);
+			} );
+
 
 		});
 		return usersData;
@@ -61,6 +82,8 @@ Promise.all([postsRequest, usersRequest])
 	.then(() => {
 
 		const deleteButton = document.querySelector(".Delete");
+		const cancelPopupButton = document.querySelector(".close-popup");
+
 
 		deleteButton.addEventListener("click", () => {
 
@@ -78,7 +101,13 @@ Promise.all([postsRequest, usersRequest])
 					console.error("An error occurred while trying to delete the post:", error);
 				});
 
+			hidePopup();
+
 		});
+
+
+		cancelPopupButton.addEventListener("click", hidePopup);
+
 	})
 
 	.catch(err => {
@@ -89,5 +118,10 @@ Promise.all([postsRequest, usersRequest])
 
 
 
+
+
+function navigateToSection(sectionId) {
+	console.log(sectionId);
+}
 
 

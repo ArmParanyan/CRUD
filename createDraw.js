@@ -61,8 +61,7 @@ export  function drawCreatePosts(usersData) {
 		const selectUser = document.querySelector("select");
 		const createButton = document.querySelector(".create-post");
 
-		// const button = document.querySelector(".create-button");
-		// button.href = "/#create"
+
 
 		const userIds = usersData.map(({id}) => id);
 
@@ -115,16 +114,10 @@ export  function drawCreatePosts(usersData) {
 			}
 		});
 
-	// window.location.href = "http://127.0.0.1:5500/#/create";
 
-
-
+		return window.location.hash;
 
 
 	}
-
-
-
-
 
 }
