@@ -4,7 +4,6 @@ import {Requests} from "./requests.js";
 import {drawCreatePosts} from "./createDraw.js";
 import {drawEditPosts} from "./editDraw.js";
 import {deleteUserPopup, drawPopup, hidePopup} from "./deleteDraw.js";
-import {routingHandler} from "./router.js";
 
 
 const navBar = document.getElementById("nav-bar");
@@ -32,7 +31,7 @@ Promise.all([postsRequest, usersRequest])
 
 	.then(([postsData, usersData]) => {
 		drawUserPosts(postsData, usersData);
-		routingHandler(path);
+
 		return [postsData, usersData];
 	})
 	.then(([postsData, usersData]) => {
@@ -41,7 +40,6 @@ Promise.all([postsRequest, usersRequest])
 		button.addEventListener("click", () => {
 			path = drawCreatePosts(usersData)();
 
-			routingHandler(path);
 		} );
 
 
@@ -55,9 +53,8 @@ Promise.all([postsRequest, usersRequest])
 			elem.addEventListener("click", () => {
 
 				let id = elem.getAttribute("data-user-id");
-
 				path = drawEditPosts(usersData, id)();
-				routingHandler(path);
+
 			} );
 
 

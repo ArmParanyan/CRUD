@@ -33,10 +33,7 @@ export function drawMenu(data, container) {
 				let img = document.createElement("img");
 				img.src = data.icon;
 
-				if (img.src === "./images/Ellipse 145.svg") {
 
-					img.classList.add("hidable", "border");
-				}
 
 
 				li.appendChild(img);
@@ -63,7 +60,6 @@ export function drawMenu(data, container) {
 					li.appendChild(arrowIcon);
 				}
 
-				// li.classList.add("hidable");
 				i++;
 
 

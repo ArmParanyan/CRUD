@@ -109,7 +109,6 @@ header {
 
 #nav-bar {
     width: 100%;
-    /*background: yellow;*/
 }
 
 ul {
@@ -124,11 +123,9 @@ ul {
 }
 
 .hello-devs {
-    /*display: flex;*/
     width: 100%;
     background: blue;
     height: 276px;
-    /*justify-content: space-between;*/
     padding-right: 127px;
     padding-left: 39px;
     border-radius: 0 0 16px 16px;
@@ -158,10 +155,7 @@ ul {
     height: 24px;
 }
 
-/*.hello-devs-content {*/
-/*    display: flex;*/
-/*    justify-content: space-between;*/
-/*}*/
+
 
 .hello-devs-p {
     color: #FFF;
@@ -335,16 +329,6 @@ h1, ul li p {
 }
 
 
-
-/*.wrapper {*/
-/*    width: 488px;*/
-/*    height: 268px;*/
-/*    margin: 0 auto;*/
-
-/*    background-color: #EEE;*/
-/*}*/
-
-
 .posts-create-main-part {
     display: flex;
     gap: 24px;
@@ -391,14 +375,10 @@ h1, ul li p {
     box-shadow: 0px 2px 4px 0px rgba(26, 160, 83, 0.30);
 
     color: #FFF;
-
-    /* H6 16px Regular Inter */
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 175%;
-    /* 28px */
 }
 
 
@@ -414,12 +394,10 @@ h1, ul li p {
     background: #DEE2E6;
     box-shadow: 0px 2px 4px 0px rgba(222, 226, 230, 0.30);
 
-    /* H6 16px Regular Inter */
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 175%; /* 28px */
 }
 
 
@@ -434,7 +412,6 @@ h1, ul li p {
 
 /* popup */
 
-/* CSS for the modal popup */
 .popup-container {
     display: none;
     position: fixed;
@@ -482,8 +459,6 @@ h1, ul li p {
 
 
     color: #FFF;
-
-    /* H6 16px Regular Inter */
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
@@ -502,7 +477,6 @@ h1, ul li p {
 
     color: #FFF;
 
-    /* H6 16px Regular Inter */
     font-family: Inter;
     font-size: 16px;
     font-style: normal;
